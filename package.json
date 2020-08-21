@@ -1,0 +1,19 @@
+{
+  "name": "@definejs/patterns",
+  "version": "0.1.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "micty",
+  "email": "mictydeng@qq.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/definejs/patterns.git"
+  },
+  "dependencies": {
+    "@definejs/directory": "^0.1.1",
+    "minimatch": "^3.0.4"
+  }
+}
