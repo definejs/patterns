@@ -1,6 +1,6 @@
 {
   "name": "@definejs/patterns",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {},
@@ -13,7 +13,7 @@
     "url": "https://github.com/definejs/patterns.git"
   },
   "dependencies": {
-    "@definejs/directory": "^0.1.1",
+    "@definejs/directory": "^1.0.0",
     "minimatch": "^3.0.4"
   }
 }
