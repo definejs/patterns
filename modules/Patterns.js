@@ -1,9 +1,9 @@
 /**
 * 路径模式工具。
 */
-const path = require('path');
 const minimatch = require('minimatch');
 const Directory = require('@definejs/directory');
+const Path = require('@definejs/path');
 
 
 //获取指定模式下的所有文件列表。
@@ -19,6 +19,8 @@ function getFiles(patterns) {
         if (item.startsWith('!')) { // 以 '!' 开头的，如 '!../htdocs/test.js'
             return;
         }
+
+        item = Path.normalize(item);
 
         let index = item.indexOf('**/');
         if (index < 0) {
@@ -100,15 +102,11 @@ module.exports = exports = {
         patterns = patterns.map(function (item, index) {
             //如 '!foo/bar/index.js'
             if (item.startsWith('!')) {
-                item = '!' + path.join(dir, item.slice(1));
+                item = '!' + Path.join(dir, item.slice(1));
             }
             else {
-                item = path.join(dir, item);
+                item = Path.join(dir, item);
             }
-
-            //把 `\` 统一换成 `/`
-            item = item.replace(/\\/g, '/');
-
 
             //以 '/' 结束，是个目录
             if (item.endsWith('/')) {
